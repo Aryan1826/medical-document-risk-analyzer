@@ -1,0 +1,130 @@
+[
+  {
+    "name": "Dr. Rajesh Mehta",
+    "registration_number": "MCI-2019-48231",
+    "hospital": "City Care Hospital",
+    "city": "Mumbai",
+    "specialisation": "General Physician",
+    "active": true
+  },
+  {
+    "name": "Dr. Priya Sharma",
+    "registration_number": "MCI-2017-33102",
+    "hospital": "Apollo Medical Centre",
+    "city": "Delhi",
+    "specialisation": "Internal Medicine",
+    "active": true
+  },
+  {
+    "name": "Dr. Anil Verma",
+    "registration_number": "DMC-2015-00427",
+    "hospital": "Verma Clinic",
+    "city": "Pune",
+    "specialisation": "General Physician",
+    "active": true
+  },
+  {
+    "name": "Dr. Sunita Rao",
+    "registration_number": "KMC-2018-91045",
+    "hospital": "LifeLine Health Centre",
+    "city": "Bangalore",
+    "specialisation": "Family Medicine",
+    "active": true
+  },
+  {
+    "name": "Dr. Vikram Singh",
+    "registration_number": "MCI-2020-55678",
+    "hospital": "Singh Medical",
+    "city": "Jaipur",
+    "specialisation": "General Physician",
+    "active": true
+  },
+  {
+    "name": "Dr. Meena Iyer",
+    "registration_number": "TMC-2016-22311",
+    "hospital": "Iyer Family Clinic",
+    "city": "Chennai",
+    "specialisation": "General Physician",
+    "active": true
+  },
+  {
+    "name": "Dr. Rahul Gupta",
+    "registration_number": "MCI-2021-61002",
+    "hospital": "Gupta Health Hub",
+    "city": "Lucknow",
+    "specialisation": "Internal Medicine",
+    "active": true
+  },
+  {
+    "name": "Dr. Anjali Desai",
+    "registration_number": "MCI-2014-18765",
+    "hospital": "Sunrise Hospital",
+    "city": "Ahmedabad",
+    "specialisation": "General Physician",
+    "active": true
+  },
+  {
+    "name": "Dr. Suresh Nair",
+    "registration_number": "KMC-2013-07654",
+    "hospital": "Nair Medicare",
+    "city": "Kochi",
+    "specialisation": "Family Medicine",
+    "active": true
+  },
+  {
+    "name": "Dr. Pooja Joshi",
+    "registration_number": "MCI-2022-70123",
+    "hospital": "Joshi Wellness Clinic",
+    "city": "Bhopal",
+    "specialisation": "General Physician",
+    "active": true
+  },
+  {
+    "name": "Dr. Arvind Patel",
+    "registration_number": "MCI-2018-42890",
+    "hospital": "Patel Multispecialty Hospital",
+    "city": "Surat",
+    "specialisation": "General Physician",
+    "active": true
+  },
+  {
+    "name": "Dr. Kavitha Reddy",
+    "registration_number": "AMC-2016-30451",
+    "hospital": "Reddy Health Clinic",
+    "city": "Hyderabad",
+    "specialisation": "Internal Medicine",
+    "active": true
+  },
+  {
+    "name": "Dr. Manoj Tiwari",
+    "registration_number": "MCI-2023-80012",
+    "hospital": "Tiwari General Hospital",
+    "city": "Varanasi",
+    "specialisation": "General Physician",
+    "active": true
+  },
+  {
+    "name": "Dr. Nalini Krishnan",
+    "registration_number": "TMC-2019-55432",
+    "hospital": "Krishnan Medical Centre",
+    "city": "Coimbatore",
+    "specialisation": "Family Medicine",
+    "active": true
+  },
+  {
+    "name": "Dr. Deepak Bose",
+    "registration_number": "WBC-2017-11238",
+    "hospital": "Bose Clinic",
+    "city": "Kolkata",
+    "specialisation": "General Physician",
+    "active": true
+  },
+  {
+    "name": "Dr. Fraudster Fake",
+    "registration_number": "XXX-9999-99999",
+    "hospital": "Ghost Hospital",
+    "city": "Nowhere",
+    "specialisation": "Forgery",
+    "active": false
+  }
+]
