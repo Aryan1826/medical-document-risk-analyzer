@@ -9,17 +9,24 @@ import cv2
 import numpy as np
 from PIL import Image
 
+try:
+    from pillow_heif import register_heif_opener
+    register_heif_opener()
+except ImportError:
+    pass  # HEIC support unavailable; install pillow-heif to enable it
+
 
 def load_image(image_bytes: bytes) -> np.ndarray:
     """
     Load raw image bytes into an OpenCV BGR numpy array.
-    Falls back to PIL for formats OpenCV cannot decode directly (TIFF, WebP, etc.).
+    Falls back to PIL for formats OpenCV cannot decode directly
+    (TIFF, WebP, HEIC, etc.).
     """
     nparr = np.frombuffer(image_bytes, np.uint8)
     image = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
 
     if image is None:
-        # PIL fallback
+        # PIL fallback — handles HEIC (via pillow-heif), TIFF, WebP, etc.
         pil_img = Image.open(io.BytesIO(image_bytes)).convert("RGB")
         image = cv2.cvtColor(np.array(pil_img), cv2.COLOR_RGB2BGR)
 

@@ -24,6 +24,8 @@ ALLOWED_TYPES = {
     "image/png",
     "image/tiff",
     "image/webp",
+    "image/heic",
+    "image/heif",
 }
 
 MAX_SIZE_BYTES = 10 * 1024 * 1024  # 10 MB
