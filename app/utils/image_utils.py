@@ -16,11 +16,50 @@ except ImportError:
     pass  # HEIC support unavailable; install pillow-heif to enable it
 
 
+def is_pdf(file_bytes: bytes) -> bool:
+    """Detect PDF by checking its magic bytes header (%PDF-)."""
+    return file_bytes[:4] == b"%PDF"
+
+
+def pdf_to_images(pdf_bytes: bytes) -> list[bytes]:
+    """
+    Convert every page of a PDF into a PNG image (bytes).
+    Uses PyMuPDF (fitz) — no external tools like poppler required.
+
+    Renders at 2× zoom (~144 DPI) which gives Tesseract enough resolution
+    to read text accurately.
+
+    Returns a list of PNG byte strings, one per page.
+    Raises RuntimeError if pymupdf is not installed.
+    """
+    try:
+        import fitz  # PyMuPDF
+    except ImportError:
+        raise RuntimeError(
+            "pymupdf is required for PDF support. "
+            "Run: pip install pymupdf"
+        )
+
+    doc = fitz.open(stream=pdf_bytes, filetype="pdf")
+    pages: list[bytes] = []
+
+    for page in doc:
+        # 2× zoom → ~144 DPI — good balance of quality vs. speed
+        mat = fitz.Matrix(2.0, 2.0)
+        pix = page.get_pixmap(matrix=mat, alpha=False)
+        pages.append(pix.tobytes("png"))
+
+    doc.close()
+    return pages
+
+
 def load_image(image_bytes: bytes) -> np.ndarray:
     """
     Load raw image bytes into an OpenCV BGR numpy array.
     Falls back to PIL for formats OpenCV cannot decode directly
     (TIFF, WebP, HEIC, etc.).
+
+    NOTE: Do NOT pass raw PDF bytes here — convert with pdf_to_images() first.
     """
     nparr = np.frombuffer(image_bytes, np.uint8)
     image = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
